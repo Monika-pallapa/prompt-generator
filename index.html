@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Designer Prompt Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Optional Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <div class="app-header">
+        <div class="title-block">
+          <h1>Designer Prompt Generator</h1>
+          <p>
+            Template-driven prompt engineering for Midjourney, DALL·E & Stable
+            Diffusion.
+          </p>
+        </div>
+      </div>
+
+      <div class="layout">
+        <!-- LEFT: INPUTS -->
+        <div class="card">
+          <div class="card-title">
+            <span>Prompt Configuration</span>
+            <span class="small-tag"
+              >Fill a few fields → get a studio-level prompt</span
+            >
+          </div>
+
+          <label for="model">Target Model</label>
+          <select id="model">
+            <option value="generic">Generic (DALL·E / SD)</option>
+            <option value="midjourney">Midjourney-style Prompt</option>
+          </select>
+
+          <label for="promptType">Prompt Type</label>
+          <select id="promptType">
+            <option value="character">Character Design</option>
+            <option value="product">Product Shot</option>
+            <option value="ui">UI / UX Design</option>
+            <option value="logo">Logo / Branding</option>
+            <option value="concept">Concept Art / Illustration</option>
+          </select>
+
+          <label for="subject">Subject / Idea</label>
+          <input
+            id="subject"
+            type="text"
+            placeholder="e.g., futuristic food delivery app, neon cyberpunk city, minimal fintech logo"
+          />
+
+          <div class="row-2">
+            <div>
+              <label for="style">Art Style</label>
+              <select id="style">
+                <option>Digital illustration</option>
+                <option>Watercolor painting</option>
+                <option>3D render</option>
+                <option>Anime style</option>
+                <option>Cinematic concept art</option>
+                <option>Flat illustration</option>
+                <option>Minimal vector</option>
+              </select>
+            </div>
+            <div>
+              <label for="palette">Color Palette</label>
+              <select id="palette">
+                <option>Soft pastel</option>
+                <option>Vibrant neon</option>
+                <option>Muted warm</option>
+                <option>Cool blues</option>
+                <option>Black & white</option>
+                <option>Earth tones</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row-2">
+            <div>
+              <label for="lighting">Lighting</label>
+              <select id="lighting">
+                <option>Soft studio lighting</option>
+                <option>Dramatic contrast lighting</option>
+                <option>Golden hour sunlight</option>
+                <option>Backlit glow</option>
+                <option>Moody low light</option>
+              </select>
+            </div>
+            <div>
+              <label for="mood">Mood / Tone</label>
+              <select id="mood">
+                <option>Futuristic</option>
+                <option>Calm & minimal</option>
+                <option>Playful</option>
+                <option>Mysterious</option>
+                <option>Professional & clean</option>
+              </select>
+            </div>
+          </div>
+
+          <label for="extras">Extra Details (optional)</label>
+          <textarea
+            id="extras"
+            placeholder="e.g., ultra-detailed, 4K, subtle gradients, clean layout, isometric view"
+          ></textarea>
+
+          <button class="generate-btn" onclick="generatePrompt()">
+            <span class="spark">⚡</span>
+            Generate Structured Prompts
+          </button>
+        </div>
+
+        <!-- RIGHT: OUTPUTS -->
+        <div class="card">
+          <div class="card-title">
+            <span>Generated Prompts & Comparison</span>
+          </div>
+          <p class="card-subtitle">
+            Naive vs engineered prompts – use this in your report to show the
+            impact of prompt engineering.
+          </p>
+
+          <div class="outputs-column">
+            <!-- Naive prompt -->
+            <div>
+              <div class="output-label-row">
+                <span>Naive Prompt</span>
+                <span class="pill">User’s raw idea</span>
+              </div>
+              <div class="output-area">
+                <textarea
+                  id="naivePrompt"
+                  placeholder="Click Generate to see the naive prompt."
+                ></textarea>
+              </div>
+            </div>
+
+            <!-- Engineered prompt -->
+            <div>
+              <div class="output-label-row">
+                <span>Engineered Prompt</span>
+                <span class="pill" id="modelTag">Generic model</span>
+              </div>
+              <div class="output-area">
+                <textarea
+                  id="engineeredPrompt"
+                  placeholder="Click Generate to see the optimized prompt."
+                ></textarea>
+              </div>
+              <div class="copy-row">
+                <button class="copy-btn" onclick="copyPrompt()">Copy</button>
+                <span id="copyStatus" class="small-tag"></span>
+              </div>
+            </div>
+          </div>
+
+          <ul class="tip-list">
+            <li>
+              Change one field at a time and see how the engineered prompt text
+              adapts.
+            </li>
+            <li>
+              Use screenshots of both prompts in your documentation as “Before
+              vs After”.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

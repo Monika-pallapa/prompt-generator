@@ -1,0 +1,244 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #f9e5ff, #e3f0ff);
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+}
+
+.app {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  max-width: 960px;
+  width: 100%;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+  padding: 18px 18px 22px;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.title-block h1 {
+  font-size: 1.4rem;
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.title-block p {
+  margin: 3px 0 0;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.badge {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  background: #f3e8ff;
+  color: #6b21a8;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #a855f7;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 880px) {
+  body {
+    align-items: flex-start;
+  }
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 14px 14px 16px;
+  border: 1px solid #e5e7eb;
+}
+
+.card-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-subtitle {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-bottom: 8px;
+}
+
+label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
+
+select,
+input,
+textarea {
+  width: 100%;
+  padding: 8px 9px;
+  font-size: 0.8rem;
+  border-radius: 9px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  transition: border 0.15s ease, box-shadow 0.15s ease;
+  font-family: inherit;
+  background: #f9fafb;
+}
+
+select:focus,
+input:focus,
+textarea:focus {
+  border-color: #a855f7;
+  box-shadow: 0 0 0 1px rgba(168, 85, 247, 0.23);
+  background: #ffffff;
+}
+
+textarea {
+  resize: none;
+  min-height: 90px;
+  user-select: text;
+}
+
+.row-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+@media (max-width: 640px) {
+  .row-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.generate-btn {
+  margin-top: 14px;
+  width: 100%;
+  border: none;
+  border-radius: 999px;
+  padding: 9px 14px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  background: linear-gradient(135deg, #5324c1, #32061c);
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.generate-btn span.spark {
+  font-size: 1rem;
+}
+
+.small-tag {
+  font-size: 0.7rem;
+  color: #9ca3af;
+}
+
+.output-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.pill {
+  font-size: 0.7rem;
+  background: #eff6ff;
+  color: #1d4ed8;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.output-area {
+  margin-top: 4px;
+}
+
+.copy-row {
+  margin-top: 6px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  align-items: center;
+}
+
+.copy-btn {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid #e5e5e8;
+  background: #cfc1eb;
+  cursor: pointer;
+}
+
+.copy-btn:active {
+  transform: scale(0.97);
+}
+
+.tip-list {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  font-size: 0.74rem;
+  color: #6b7280;
+}
+
+.tip-list li {
+  margin-bottom: 2px;
+}
+
+.outputs-column {
+  margin-top: 4px;
+}
+
+.outputs-column > div {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 880px) {
+  .card-subtitle {
+    margin-bottom: 4px;
+  }
+}
